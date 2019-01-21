@@ -1,0 +1,44 @@
+AxesOff
+FnOff 
+0->Xmin:94->Xmax
+0->Ymin:62->Ymax
+ClrDraw
+
+DelVar D
+~125->S
+47->A:4->B
+Pt-On(49,61,2
+Pt-On(45,61,2
+
+While not(D
+Pxl-Off(B,A
+Pxl-Off(B-1,A
+Pxl-Off(B-2,A
+47->A:4->B
+S+125->S
+
+For(G,0,50
+Pxl-On(randInt(8,61),randInt(0,94
+End
+
+Repeat B=62 or D
+For(G,0,5
+End
+Pxl-Off(B,A
+Pxl-Off(B-1,A
+Pxl-Off(B-2,A
+B+1->B
+A+sum(DeltaList(K={24,26
+Ans-(A=94)+not(A->A
+pxl-Test(B,A)+pxl-Test(B-1,A)+pxl-Test(B-2,A->D
+Pxl-On(B,A
+Pxl-On(B-1,A
+Pxl-On(B-2,A
+getKey->K
+End
+End
+
+Text(1,1,"DEATH!
+Text(50,1,"Score: ",S
+Pause 
+ClrDraw
